@@ -1,0 +1,16 @@
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.exe
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.deps.json
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.runtimeconfig.json
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.runtimeconfig.dev.json
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.dll
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\ref\md.dll
+C:\Users\Grzesiu\RiderProjects\md\md\bin\Debug\net5.0\md.pdb
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.csprojAssemblyReference.cache
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.AssemblyInfoInputs.cache
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.AssemblyInfo.cs
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.csproj.CoreCompileInputs.cache
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.dll
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\ref\md.dll
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.pdb
+C:\Users\Grzesiu\RiderProjects\md\md\obj\Debug\net5.0\md.genruntimeconfig.cache
