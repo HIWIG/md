@@ -8,6 +8,30 @@ namespace md
         static void Main(string[] args)
         {
 
+            int[,] weight = new int[10,10];
+            int temp = 9;
+            for (int i = 1; i < 10; i++)
+            {
+                
+                for (int j = i+1; j < 10; j++)
+                {
+                    temp += 1;
+                    weight[i, j] = temp;
+                    weight[j, i] = temp;
+                }
+            }
+            
+            //wypisywanie tabeli wag
+            // for (int i = 0; i < 10; i++)
+            // {
+            //     for (int j = 0; j < 10; j++)
+            //     {
+            //         Console.Write($"{weight[i,j]} ");
+            //     }
+            //     Console.WriteLine();
+            // }
+
+            
             for (int c = 0; c < 100; c++)
             {
 
