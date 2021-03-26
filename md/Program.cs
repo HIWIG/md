@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Linq;
+using System.Threading;
+using System.Threading.Channels;
 
 namespace md
 {
@@ -12,8 +14,9 @@ namespace md
         {
             int[] tableweight = new int[100];
             List<string> test = new List<string>(){ "12","25","32","55","87","98","55","43","10","18"};
+            string[] result = new string[102];
 
-            string filename = "test.txt"; 
+            string filename = "drzewa.txt"; 
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,filename);
             Console.WriteLine(path);
             
@@ -38,18 +41,7 @@ namespace md
                 weight[i, 0] = i;
             }
 
-            //wypisywanie tabeli wag
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    Console.Write($"{weight[i,j]} ");
-                }
-                Console.WriteLine();
-            }
-
-
-           
+            
             for (int c = 0; c < 100; c++)
             {
                 int treeLenght = 10;
@@ -85,28 +77,25 @@ namespace md
                 tableweight[c] = sum;
                 foreach (var x in wyn)
                 {
-                    Console.Write(x); 
                     sb.Append($"{x} ");
-                    
                 }
-
-                Console.WriteLine();
-                Console.WriteLine();
                 
-                lines.Add($"{sb.ToString()} \n"); // TUTAJ DODAJ WYNIK WAGI
-                File.WriteAllLines(path,lines);
+                lines.Add($"{sb.ToString()} "); // TUTAJ DODAJ WYNIK WAGI
                 sb.Clear();
             }
-
-                
-                
-                         
-                var q =tableweight.Select((item,index)=> new{item,index}).OrderBy(x => x.item).Select(x=>x.index);
-                foreach (var i in q)
-                {
-                    Console.WriteLine(i);
-                }
+            var q=tableweight.Select((item,index)=> new{item,index}).OrderBy(x => x.item).Select(x=>x.index);
+            Console.WriteLine("=====================================================================");
+            
+            for (int c = 2; c < 102; c++)
+            {
+               result[c]=$"Drzewo numer:{c-1} {lines[q.ElementAt(c-2)]} Waga:{tableweight[q.ElementAt(c-2)]}";
             }
+            result[0]=$"Program napisany przez:\nDamian Grygierczyk, Grzegorz Faber, Jakub Hoczek, Szymon Damek\n\nDrzewo o najmniejszej wadze: {lines[q.ElementAt(0)]} Waga:{tableweight[q.ElementAt(0)]}";
+            result[1]=$"Drzewo o największej wadze: {lines[q.ElementAt(99)]} Waga:{tableweight[q.ElementAt(99)]}\n\nWszystkie drzewa:";
+            File.WriteAllLines(path,result);
+            Console.WriteLine("Wygenerowano 100 drzew do pliku drzewa.txt. Program zamknie się za 5 sekund ");
+            Thread.Sleep(5000);
+        }
 
          
 
