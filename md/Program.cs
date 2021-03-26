@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace md
 {
@@ -7,6 +9,14 @@ namespace md
     {
         static void Main(string[] args)
         {
+            List<string> test = new List<string>(){ "12","25","32","55","87","98","55","43","10","18"};
+
+            string filename = "test.txt"; 
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,filename);
+            Console.WriteLine(path);
+            
+            StringBuilder sb = new StringBuilder();
+            List<string> lines = new List<string>();
 
             int[,] weight = new int[10,10];
             int temp = 9;
@@ -20,18 +30,7 @@ namespace md
                     weight[j, i] = temp;
                 }
             }
-            
-            //wypisywanie tabeli wag
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     for (int j = 0; j < 10; j++)
-            //     {
-            //         Console.Write($"{weight[i,j]} ");
-            //     }
-            //     Console.WriteLine();
-            // }
-
-            
+           
             for (int c = 0; c < 100; c++)
             {
 
@@ -46,9 +45,7 @@ namespace md
                 {
                     R.Add(i + 1);
                 }
-
-
-
+                
                 for (int i = 0; i < treeLenght; i++)
                 {
                     var x = rnd.Next(0, R.Count);
@@ -67,16 +64,18 @@ namespace md
                     R.RemoveAt(x);
                 }
 
-
-
-
                 foreach (var x in wyn)
                 {
                     Console.Write(x);
+                    sb.Append($"{x} ");
                 }
 
                 Console.WriteLine();
                 Console.WriteLine();
+                
+                lines.Add($"{sb.ToString()} \n"); // TUTAJ DODAJ WYNIK WAGI
+                File.WriteAllLines(path,lines);
+                sb.Clear();
             }
         }
     }
