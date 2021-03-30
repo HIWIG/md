@@ -96,9 +96,5 @@ namespace md
             Console.WriteLine("Wygenerowano 100 drzew do pliku drzewa.txt. Program zamknie się za 5 sekund ");
             Thread.Sleep(5000);
         }
-
-         
-
-
-        }
     }
+}
